@@ -1,0 +1,7 @@
+--- 
+javascripts: 
+- base: 
+  - jquery-1.4.1
+stylesheets: 
+- base: []
+
