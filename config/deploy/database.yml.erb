@@ -1,0 +1,24 @@
+
+  # store your custom template at foo/bar/database.yml.erb
+  set :template_dir, "foo/bar"
+  #
+  # example of database template
+
+  base: &base
+    adapter: sqlite3
+    timeout: 5000
+  development:
+    database: #{shared_path}/db/development.sqlite3
+    <<: *base
+  test:
+    database: #{shared_path}/db/test.sqlite3
+    <<: *base
+  production:
+    adapter: #{Capistrano::CLI.ui.ask("Enter db adapter: [mysql] ") {|q| q.default = "mysql"}}
+    database: #{Capistrano::CLI.ui.ask("Enter db name: [#{application}_production] ") {|q| q.default = "#{application}_production"}}
+    username: #{Capistrano::CLI.ui.ask("Enter db user: ")}
+    password: #{Capistrano::CLI.ui.ask("Enter db password: ")}
+    encoding: utf8
+    timeout: 5000
+    
+  
