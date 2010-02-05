@@ -7,12 +7,14 @@ RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
-  config.gem 'fancy-buttons'
-  config.gem 'compass-baseline', :lib => 'baseline'
   config.gem 'compass', :version => '>= 0.10.0.pre2'
+  config.gem 'compass-baseline', :lib => 'baseline'
+  config.gem 'fancy-buttons'
   config.gem 'haml'
   config.gem 'devise'
   config.gem 'warden'
+  config.gem 'shoulda'
+  config.gem 'factory_girl', :version => '>= 1.2.3'
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
