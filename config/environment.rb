@@ -14,13 +14,14 @@ Rails::Initializer.run do |config|
   config.gem 'devise'
   config.gem 'warden'
   config.gem 'shoulda'
-  config.gem 'factory_girl', :version => '>= 1.2.3'
+  config.gem 'factory_girl'
+  config.gem 'nokogiri'
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
 
   # Add additional load paths for your own custom dirs
-  # config.load_paths += %W( #{RAILS_ROOT}/extras )
+  # config.load_paths += %W( #{RAILS_ROOT}/lib )
 
   # Specify gems that this application depends on and have them installed with rake gems:install
   # config.gem "bj"
@@ -47,3 +48,5 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 end
+
+require 'open-uri'
