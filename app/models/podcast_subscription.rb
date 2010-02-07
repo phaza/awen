@@ -1,6 +1,7 @@
 class PodcastSubscription < ActiveRecord::Base
   
   validates_uri_existence_of :url
+  validates_uniqueness_of :uri
   
   
   def check_for_new_items
