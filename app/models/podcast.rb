@@ -12,12 +12,13 @@ class Podcast < ActiveRecord::Base
     _download(self.url)
   end
   
-  def _progress(p)
-  end
   
   private
   def cleanup
     FileUtils.rm(self.path) if self.path
+  end
+  
+  def _progress(p)
   end
   
   def _download(_url, i = 0)
