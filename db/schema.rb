@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100205134456) do
+ActiveRecord::Schema.define(:version => 20100208002604) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -33,6 +33,21 @@ ActiveRecord::Schema.define(:version => 20100205134456) do
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "podcasts", :force => true do |t|
+    t.string   "mime"
+    t.string   "title"
+    t.string   "description"
+    t.string   "url"
+    t.string   "path"
+    t.datetime "published_at"
+    t.string   "duration"
+    t.string   "guid"
+    t.integer  "podcast_subscription_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "downloaded",              :default => false
   end
 
 end
