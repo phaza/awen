@@ -1,10 +1,7 @@
 !!!Strict
 %html
   %head
-    = formtastic_stylesheet_link_tag
+    = stylesheet_link_tag 'formtastic', 'formtastic_changes'
   %body
-    #flash
-      - flash.each do |key, value|
-        %div{:id => "flash_#{key}"}=h value
-    
+    #flash= display_flash_messages
     #content-wrapper= yield
