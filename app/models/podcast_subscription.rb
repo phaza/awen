@@ -33,7 +33,7 @@ class PodcastSubscription < ActiveRecord::Base
   end
   
   def path
-    "#{RAILS_ROOT}/public/podcasts/#{self.id}"
+    "#{Settings.podcast_folder}/#{self.id}"
   end
   
   def download_episodes
