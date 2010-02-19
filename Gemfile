@@ -7,6 +7,10 @@ gem 'compass', '>= 0.10.0.pre2'
 gem 'compass-baseline', :require => 'baseline'
 gem 'fancy-buttons'
 gem 'haml'
+group :test do
+  gem 'factory_girl'
+  gem 'shoulda'
+end
 gem 'nokogiri'
 gem 'formtastic'
 gem 'mysql'
