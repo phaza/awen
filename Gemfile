@@ -13,6 +13,7 @@ group :test do
 end
 gem 'nokogiri'
 gem 'formtastic'
+gem 'validation_reflection'
 gem 'mysql'
 
 ## Bundle edge rails:
