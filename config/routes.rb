@@ -3,6 +3,7 @@ Awen::Application.routes.draw do |map|
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
+  root :to => 'clearance/users#new'
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
