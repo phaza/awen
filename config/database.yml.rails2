@@ -1,0 +1,5 @@
+development:
+  adapter: mysql
+  username: peterhaza
+  encoding: utf8
+  database: awen
