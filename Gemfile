@@ -4,15 +4,12 @@ source 'http://gemcutter.org'
 
 gem "rails", "3.0.0.beta"
 gem 'compass', '>= 0.10.0.pre2'
-gem 'compass-baseline', :require_as => 'baseline'
+gem 'compass-baseline', :require => 'baseline'
 gem 'fancy-buttons'
 gem 'haml'
-gem 'shoulda'
-gem 'factory_girl'
 gem 'nokogiri'
 gem 'formtastic'
-gem 'clearance'
-gem 'rails-footnotes'
+gem 'mysql'
 
 ## Bundle edge rails:
 # gem "rails", :git => "git://github.com/rails/rails.git"
