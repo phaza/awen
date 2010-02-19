@@ -1,6 +1,9 @@
 !!!Strict
 %html
   %head
+    %meta{:name => 'csrf-token', :content => form_authenticity_token}
+    %meta{:name => 'csrf-param', :content => 'authenticity_token'}
+    = javascript_include_tag %W{jquery rails application}
     = stylesheet_link_tag 'formtastic', 'formtastic_changes'
   %body
     #flash= display_flash_messages
