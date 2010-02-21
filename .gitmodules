@@ -1,0 +1,3 @@
+[submodule "vendor/plugins/delayed_job"]
+	path = vendor/plugins/delayed_job
+	url = git@github.com:phaza/delayed_job.git
