@@ -12,13 +12,25 @@ class Podcast < ActiveRecord::Base
     _download(self.url)
   end
   
+  def progress
+    return 100.0 if self.downloaded
+    Rails.cache.read(download_cache_key).to_f
+  end
   
   private
+  def download_cache_key
+    "download-progress-#{self.id}"
+  end
+  
   def cleanup
     FileUtils.rm(self.path) if self.path
   end
   
   def _progress(p)
+    Rails.logger.debug [p, @prev_progress].inspect
+    Rails.cache.write(download_cache_key, p.to_i, :expires_in => 15.seconds) if p.to_i != @prev_progress.to_i
+    
+    @prev_progress = p.to_i
   end
   
   def _download(_url, i = 0)
@@ -41,7 +53,7 @@ class Podcast < ActiveRecord::Base
 
           res.read_body do |fragment|
             file.write(fragment)
-            _progress(((file.tell.to_f / res.content_length) * 1000.0).to_i / 10.0)
+            _progress((file.tell.to_f / res.content_length) * 100.0)
           end
 
         end
