@@ -40,6 +40,8 @@ module Awen
     #   g.template_engine :erb
     #   g.test_framework  :test_unit, :fixture => true
     # end
+    
+    config.frameworks -= [:active_record] 
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters << :password
