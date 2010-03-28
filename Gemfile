@@ -16,8 +16,10 @@ gem 'nokogiri'
 gem 'formtastic'
 # gem 'validation_reflection'
 # gem 'mysql'
+gem 'mongo'
 gem 'mongo_mapper'
 gem 'mongo_ext'
+gem 'joint'
 
 ## Bundle edge rails:
 # gem "rails", :git => "git://github.com/rails/rails.git"
