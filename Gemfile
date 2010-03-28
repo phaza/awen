@@ -21,6 +21,7 @@ gem 'mongo_mapper'
 gem 'mongo_ext'
 gem 'joint'
 
+gem 'clearance', :git => 'git://github.com/thoughtbot/clearance.git', :branch => 'rails3'
 gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branch => 'rails3'
 
 ## Bundle edge rails:
