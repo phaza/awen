@@ -11,4 +11,3 @@ css_dir = "public/stylesheets/compiled"
 sass_dir = "app/stylesheets"
 # To enable relative paths to assets via compass helper functions. Uncomment:
 # relative_assets = true
-      sass_options = {:cache_location => "/tmp/sass-cache"}
