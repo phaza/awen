@@ -7,6 +7,7 @@ gem 'compass', '>= 0.10.0.pre2'
 gem 'compass-baseline', :require => 'baseline'
 gem 'fancy-buttons'
 gem 'haml'
+gem 'delayed_job', '>= 1.9.0pre'
 group :test do
   gem 'factory_girl'
   gem 'shoulda'
