@@ -14,14 +14,16 @@ end
 gem 'nokogiri'
 gem 'formtastic'
 gem 'validation_reflection'
-gem 'mysql'
+# gem 'mysql'
+gem 'mongo_mapper'
+gem 'mongo_ext'
 
 ## Bundle edge rails:
 # gem "rails", :git => "git://github.com/rails/rails.git"
 
 # ActiveRecord requires a database adapter. By default,
 # Rails has selected sqlite3.
-gem "sqlite3-ruby", :require => "sqlite3"
+# gem "sqlite3-ruby", :require => "sqlite3"
 
 ## Bundle the gems you use:
 # gem "bj"
