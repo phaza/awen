@@ -21,6 +21,8 @@ gem 'mongo_mapper'
 gem 'mongo_ext'
 gem 'joint'
 
+gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branch => 'rails3'
+
 ## Bundle edge rails:
 # gem "rails", :git => "git://github.com/rails/rails.git"
 
