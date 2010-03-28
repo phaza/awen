@@ -14,7 +14,7 @@ group :test do
 end
 gem 'nokogiri'
 gem 'formtastic'
-gem 'validation_reflection'
+# gem 'validation_reflection'
 # gem 'mysql'
 gem 'mongo_mapper'
 gem 'mongo_ext'
