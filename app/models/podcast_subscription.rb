@@ -1,12 +1,17 @@
-class PodcastSubscription < ActiveRecord::Base
+class PodcastSubscription
+  include MongoMapper::Document
   
-  has_many :podcasts, :dependent => :destroy
+  key :title, String
+  key :image, String
+  key :description, String
+  key :url, String, :unique => true
   
-  validates_uri_existence_of :url
-  validates_uniqueness_of :url
+  many :podcasts, :dependent => :destroy
+  
+  # validates :url, :url => true, :uniqueness => true
+  # validates :url, :url => true
   
   after_create :delayed_selfupdate
-  before_destroy :cleanup
     
   def delayed_selfupdate
     self.send_later(:parse)
@@ -25,9 +30,9 @@ class PodcastSubscription < ActiveRecord::Base
     
     write_attribute(:url, new_feed_url) unless new_feed_url.blank?
     
-    write_attribute(:description, _description)
-    write_attribute(:title, _title)
-    write_attribute(:image, _image)
+    self.description =  _description
+    self.title = _title
+    self.image = _image
     
     self.save
   end
@@ -38,17 +43,16 @@ class PodcastSubscription < ActiveRecord::Base
   
   def download_episodes
     new_podcasts = check_for_new_podcasts
-    Podcast.transaction do
-      new_podcasts.map do |podcast|
-        podcast.send_later(:download) if podcast.save
+    new_podcasts.each do |podcast|
+      if podcast.valid?
+        podcast.send_later(:download)
+        podcasts << podcast
       end
     end
+    self.save
   end
   
   private
-  def cleanup
-    FileUtils.rm_f(self.path)
-  end
   
   def check_for_new_podcasts
     doc = get_xml_doc
